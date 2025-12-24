@@ -3,7 +3,7 @@ import { Suspense } from "react";
 
 import { publicSans } from "@/utlis/font";
 
-import Navbar from "@/components/navbar";
+import { DesktopNavbar } from "@/components/navbar";
 
 import "./globals.css";
 
@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${publicSans.className} flex `}>
-        <Navbar />
-        <main className='p-5'>
+        <DesktopNavbar />
+        <main className='p-200 md:p-500 bg-beige-100 w-full'>
           <Suspense fallback={<p>Looooader</p>}>
             {children}
           </Suspense>

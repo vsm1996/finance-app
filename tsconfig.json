@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "globals.d.ts",
-    "svg.d.ts",
+    "svg.d.ts", "app/test/page.jsx", "app/test/utils/index.js", "app/test/hooks/index.jsx",
   ],
   "exclude": [
     "node_modules"

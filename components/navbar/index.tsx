@@ -15,46 +15,47 @@ import BillsIcon from '@/public/assets/images/icon-nav-recurring-bills.svg'
 import MinimizeIcon from '@/public/assets/images/icon-minimize-menu.svg'
 import { NavLink } from '@/utlis/types'
 
-const Navbar = () => {
+const navLinks: NavLink[] = [
+  {
+    label: 'Overview',
+    href: '/',
+    icon: <OverviewIcon />
+  },
+  {
+    label: 'Transactions',
+    href: '/transactions',
+    icon: <TransactionsIcon />
+  },
+  {
+    label: 'Budgets',
+    href: '/budgets',
+    icon: <BudgetsIcon />
+  },
+  {
+    label: 'Pots',
+    href: '/pots',
+    icon: <PotsIcon />
+  },
+  {
+    label: 'Recurring bills',
+    href: '/bills',
+    icon: <BillsIcon />
+  },
+]
+
+export const DesktopNavbar = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
-  const navLinks: NavLink[] = [
-    {
-      label: 'Overview',
-      href: '/',
-      icon: <OverviewIcon />
-    },
-    {
-      label: 'Transactions',
-      href: '/transactions',
-      icon: <TransactionsIcon className='fill-green' />
-    },
-    {
-      label: 'Budgets',
-      href: '/budgets',
-      icon: <BudgetsIcon />
-    },
-    {
-      label: 'Pots',
-      href: '/pots',
-      icon: <PotsIcon />
-    },
-    {
-      label: 'Recurring bills',
-      href: '/bills',
-      icon: <BillsIcon />
-    },
-  ]
   return (
-    <nav className={`${isOpen ? 'min-w-[300px]' : 'min-w-[88px]'} transition-all ease-in-out duration-300  bg-grey-900 flex flex-col gap-300 text-3 text-grey-300`}>
+    <nav className={`${isOpen ? 'min-w-[300px]' : 'min-w-[88px]'} hidden md:flex transition-all ease-in-out duration-300  bg-grey-900 flex-col gap-300 text-3 text-grey-300`}>
       <div className='px-8 py-8 flex items-center'>
         {isOpen ? <LogoLarge /> : <LogoSmall />}
       </div>
 
-      <ul className='w-full flex flex-col gap-100 pr-300'>
+      <ul className='w-full flex flex-col gap-100'>
         {navLinks.map((link) => (
           <li key={link.label} className='group'>
-            <Link className='rounded-r-xl flex items-center gap-200 px-8 py-4 transition-all ease-in-out duration-300 group-hover:bg-beige-100 group-hover:text-grey-900 group-hover:border-l-4 group-hover:border-green' href={link.href}>
+            <Link className=' flex items-center gap-200 px-8 py-4 transition-all ease-in-out duration-300 group-hover:bg-beige-100 group-hover:text-grey-900 group-hover:border-l-4 group-hover:border-green' href={link.href}>
               {link.icon}
               {isOpen && (
                 <span className={`transition-all ease-in-out duration-300`}>
@@ -78,4 +79,3 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
