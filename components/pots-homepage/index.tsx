@@ -31,11 +31,11 @@ const potsArr: PotsCardProps[] = [
 
 const PotsHomePage = () => {
   return (
-    <section className='bg-white rounded-xl p-400 flex flex-col gap-250'>
+    <section className='bg-white rounded-xl p-400 flex flex-col gap-250 h-full'>
       <HomepageCardTitle title='Pots' label='See Details' href='/pots' />
 
-      <div className='flex flex-col lg:flex-row lg:items-center gap-250'>
-        <div className='flex-1 flex items-center gap-250 bg-beige-100 pl-4 py-5 rounded-xl'>
+      <div className='flex flex-col lg:flex-row gap-250 h-full'>
+        <div className='flex-1 flex items-center gap-250 bg-beige-100 pl-4 py-5 rounded-xl self-stretch'>
           <span className=''>
             <PotsIcon />
           </span>
@@ -45,7 +45,7 @@ const PotsHomePage = () => {
           </div>
         </div>
 
-        <div className='flex-1 grid grid-cols-2 gap-200'>
+        <div className='flex-1 grid grid-cols-2 gap-200 h-full'>
           {potsArr.map(({ color, label, amount }) => <PotsCard key={label} color={color} label={label} amount={amount} />)}
         </div>
       </div>

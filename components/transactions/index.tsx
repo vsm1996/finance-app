@@ -23,7 +23,7 @@ const Transactions = () => {
 
 
   return (
-    <section className='bg-white rounded-xl p-400 flex flex-col gap-400'>
+    <section className='bg-white rounded-xl p-400 flex flex-col gap-400 h-full'>
       <HomepageCardTitle title='Transactions' label='View All' href='/transactions' />
       {transactionsList.length > 0 && transactionsList.map((transaction, index) => {
         const { avatar, name, date, amount, category, recurring } = transaction

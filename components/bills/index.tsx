@@ -22,7 +22,7 @@ const billsArr: BillsCardProps[] = [
 
 const Bills = () => {
   return (
-    <section className='bg-white rounded-xl p-400 flex flex-col gap-400'>
+    <section className='bg-white rounded-xl p-400 flex flex-col gap-400 h-full'>
       <HomepageCardTitle title='Recurring Bills' label='See Details' href='/bills' />
 
       <div className='flex flex-col gap-150'>

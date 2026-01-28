@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex gap-400 min-h-screen flex-col">
+    <div className="flex gap-400 min-h-screen flex-col">
       <h1 className="text-1 text-grey-900">Overview</h1>
 
       {/* Balances */}
@@ -18,16 +18,16 @@ export default function Home() {
         <Card category="Expenses" amount={'1,700.50'} />
       </section>
 
-      <div className="flex flex-col md:flex-row md:items-center gap-300">
-        <div className="flex-1 flex flex-col gap-300">
+      <div className="flex flex-col md:flex-row md:items-start gap-300 h-full">
+        <div className="flex-1 flex flex-col gap-300 self-stretch">
           <PotsHomePage />
           <Transactions />
         </div>
-        <div className="flex-1 flex flex-col gap-300">
+        <div className="flex-1 flex flex-col gap-300 self-stretch">
           <Budgets />
           <Bills />
         </div>
       </div>
-    </main>
+    </div>
   );
 }
